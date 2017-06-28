@@ -17,10 +17,6 @@ echo "INFO: configuring hostname.vio0"
 rm /etc/hostname.*
 echo "dhcp" >> /etc/hostname.vio0
 
-#echo "INFO: Adding cloud-init.pl"
-#ftp -o /usr/local/libdata/cloud-init.pl https://raw.githubusercontent.com/exoscale/openbsd-cloud-init/master/cloud-init.pl
-#perl /usr/local/libdata/cloud-init.pl deploy
-
 #
 # Cleanup
 #
@@ -39,7 +35,7 @@ rm /var/db/dhclient.leases.vio0
 echo "INFO: Disabling root password"
 chpass -a 'root:*:0:0:daemon:0:0:Charlie &:/root:/bin/ksh'
 
-echo "INFO: Adding /etc/firsttime with basic metadata gathering"
+echo "INFO: Adding /etc/rc.firsttime with basic metadata gathering"
 
 # If you quote EOF then it won't evaluate backticks, which end up being empty
 # after an echo.
