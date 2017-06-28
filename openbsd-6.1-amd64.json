@@ -1,13 +1,9 @@
 {
   "variables": {
-    "chef_version": "provisionerless",
     "ftp_proxy": "{{env `ftp_proxy`}}",
     "http_proxy": "{{env `http_proxy`}}",
     "https_proxy": "{{env `https_proxy`}}",
-    "mirror": "http://ftp.openbsd.org",
-    "vagrant_ansible": "no",
-    "atlas_box_name": "rmaclean/openbsd-6.1",
-    "atlas_box_version": "1.0.0"
+    "mirror": "http://ftp.openbsd.org"
   },
   "provisioners": [
     {
@@ -28,7 +24,7 @@
   "builders": [
     {
       "type": "qemu",
-      "headless": false,
+      "headless": true,
       "boot_command": [
         "S<enter>",
         "cat <<EOF >>install.conf<enter>",
